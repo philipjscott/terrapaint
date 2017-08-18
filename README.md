@@ -1,4 +1,4 @@
-# terramap
+# terrapaint
 
 Live here: https://scottyfillups.github.io/terrapaint/
 
