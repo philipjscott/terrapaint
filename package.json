@@ -1,0 +1,25 @@
+{
+  "name": "terrapaint",
+  "version": "1.0.0",
+  "description": "Simple heightmap generator for HTML5 canvas",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "browserify ./docs/demo.js > ./docs/bundle.js"
+  },
+  "keywords": [
+    "heightmap",
+    "procedural generation",
+    "terrain",
+    "canvas"
+  ],
+  "author": "Philip Scott",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottyFillups/terrapaint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ScottyFillups/terrapaint/issues"
+  },
+  "homepage": "https://github.com/ScottyFillups/terrapaint#readme"
+}
