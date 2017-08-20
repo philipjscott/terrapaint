@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  line-height: 200%;
+  margin: 60px auto 0 auto;
+  color: #222;
+}
+main {
+  margin: 0 auto;
+  width: 600px;
+}
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.1em;
+}
+p {font-size: 1em}
+#args-form {
+  font-size: 1em;
+  width: 430px;
+  user-select: none;
+  text-align: right;
+  margin-bottom: 20px;
+}
+input, button, select {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+footer {
+  position: fixed;
+  left: 10px;
+  top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+canvas {
+  margin-bottom: 30px;
+}

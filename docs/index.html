@@ -2,34 +2,22 @@
 <html>
   <head>
     <title>Terrapaint demonstration</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
     <h1>Terrapaint</h1>
     <h2>A simple wrapper that lets you draw heightmaps easily.</h2>
-    <h3>
-      The Terrapaint module (found on NPM) exports a wrapper
-      that takes a noise function, along with the height
-      and width of your canvas, and paints a heightmap!
-    </h3>
-    <p>
-    Terrapaint comes with many options that gives you control of
-    your heightmap, such as specifying octaves and frequencies, and 
-    setting your own custom color map.
-    </p>
-    <p>
-    Keep in mind Terrapaint does NOT provide noise functions;
-    noiseJS was used for the perlin and simplex noise demos
-    </p>
     <p>Try manipulating some of the heightmaps below!</p>
     <form action="" id="args-form">
-      Width: <input id="args-width" type="text" /><br />
-      Height: <input id="args-height" type="text" /><br />
-      Octaves: <input id="args-octaves" type="text" /><br />
-      Period: <input id="args-period" type="text" /><br />
+      Width: <input id="args-width" type="text" placeholder="1024" /><br />
+      Height: <input id="args-height" type="text" placeholder="512" /><br />
+      Octaves: <input id="args-octaves" type="text" placeholder="7" /><br />
+      Period: <input id="args-period" type="text" placeholder="512" /><br />
       Noise type:
       <select id="args-type">
-        <option value="perlin">Perlin</option>
         <option value="simple">Simplex</option>
+        <option value="perlin">Perlin</option>
         <option value="white">White</option>
       </select><br />
       Colormap type:
@@ -39,7 +27,9 @@
       </select><br />
       <button id="args-submit" type="button">Generate</button>
     </form>
+    </main>
     <div id="entry"></div>
+    <footer>ScottyFillups | Philip Scott</footer>
   </body>
   <script src="noise.js"></script>
   <script src="terrapaint.js"></script>

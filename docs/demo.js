@@ -1,8 +1,8 @@
 $('args-submit').addEventListener('click', function () {
-  var height = parseInt($('args-height').value) || 128
-  var width = parseInt($('args-width').value) || 128
-  var octaves = parseInt($('args-octaves').value) || 5
-  var period = parseInt($('args-period').value) || 64
+  var height = parseInt($('args-height').value) || 512
+  var width = parseInt($('args-width').value) || 1024
+  var octaves = parseInt($('args-octaves').value) || 7
+  var period = parseInt($('args-period').value) || 512
   var type = $('args-type').options[$('args-type').selectedIndex].value
   var colormap = $('args-colormap').options[$('args-colormap').selectedIndex].value
   var fn
@@ -30,7 +30,12 @@ $('args-submit').addEventListener('click', function () {
       colormap = undefined
   }
 
+  if ($('entry').firstChild) {
+    $('entry').removeChild($('entry').firstChild)
+  }
+
   terrapaint(fn, width, height, {
+    target: '#entry',
     octaves: octaves,
     period: period,
     colormap: colormap,
