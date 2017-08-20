@@ -2,32 +2,9 @@
 
 ### Canvas heightmap generator
 
-<div id="entry"></div>
-<script src="https://scottyfillups.github.io/terrapaint/noise.js"></script>
-<script src="https://scottyfillups.github.io/terrapaint/terrapaint.js"></script>
-<script>
-colormap = []
-for (var i = 0; i < 120; i++) colormap[i] = [0,162,232,255]
-for (var i = 0; i < 130; i++) colormap[i] = [153,217,234,255]
-for (var i = 0; i < 140; i++) colormap[i] = [239,228,176,255]
-for (var i = 0; i < 160; i++) colormap[i] = [181,230,29,255]
-for (var i = 0; i < 185; i++) colormap[i] = [34,177,76,255]
-for (var i = 0; i < 190; i++) colormap[i] = [185,122,87,255]
-for (var i = 0; i < 200; i++) colormap[i] = [195,195,195,255]
-for (var i = 0; i < 210; i++) colormap[i] = [127,127,127,255]
-for (var i = 0; i < 256; i++) colormap[i] = [255,255,255,255]
+![Island heightmap](https://scottyfillups.github.io/terrapaint/island.png)
 
-noise.seed(Math.random())
-terrapaint(noise.simplex2, 512, 512, {
-  octaves: 6,
-  period: 256,
-  colormap: colormap,
-  offset: true
-})
-</script>
-
-
-More demonstrations here: https://scottyfillups.github.io/terrapaint/
+More demonstrations here: <https://scottyfillups.github.io/terrapaint/>
 
 ### Installation
 
