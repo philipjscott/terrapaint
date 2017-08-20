@@ -26,12 +26,17 @@
       Height: <input id="args-height" type="text" /><br />
       Octaves: <input id="args-octaves" type="text" /><br />
       Period: <input id="args-period" type="text" /><br />
-      Type:
+      Noise type:
       <select id="args-type">
         <option value="perlin">Perlin</option>
         <option value="simple">Simplex</option>
         <option value="white">White</option>
-      </select>
+      </select><br />
+      Colormap type:
+      <select id="args-colormap">
+        <option value="none">None</option>
+        <option value="island">Island</option>
+      </select><br />
       <button id="args-submit" type="button">Generate</button>
     </form>
     <div id="entry"></div>
