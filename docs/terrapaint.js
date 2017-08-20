@@ -46,5 +46,3 @@ function terrapaint (noise, w, h, options) {
   ctx.putImageData(imageData, 0, 0)
   target.appendChild(canvas)
 }
-
-module.exports = terrapaint
