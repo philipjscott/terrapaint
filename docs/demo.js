@@ -1,5 +1,3 @@
-var terrapaint = require('../src/index.js')
-
 $('args-submit').addEventListener('click', function () {
   var height = parseInt($('args-height').value) || 128
   var width = parseInt($('args-width').value) || 128

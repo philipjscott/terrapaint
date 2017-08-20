@@ -28,12 +28,12 @@ terrapaint(noiseFunct, width, height, options)
 * width: The width of the generated heightmap, in pixels
 * height: The height of the generated heightmap, in pixels
 * __options__:
-  * target - _String_ or _DOM element_ The element which the canvas will be appended to.
-  * offset - _Boolean_ Set this to true if your noise function ranges from [-1, 1]. Defaults to false.
-  * period - _Integer_ For gradient noise, the size (side length) of a unit square, in pixels. Defaults to 32.
-  * octaves - _Integer_ The number of octaves. Defaults to 1.
-  * persistance - _Integer_ The persistance of the octaves (a higher value means the successive octaves will be given more weight). Defaults to 2.
-  * colormap - _Function_ or _Array<Array<Integer>>_ A mapping function or two dimensional array that will take a value between 0 and 255 as its argument or index, respectively. The function should return an array containing the RGBA values to be painted on the canvas, eg `[255, 0, 0, 255]` (red). Likewise, the array must contain an array of RGBA values for each index ranging from 0 to 255. While I haven't noticed any big difference in performance, hypothetically, the multi-dimensional array approach should be faster.
+  * target - The element which the canvas will be appended to.
+  * offset - Set this to true if your noise function ranges from [-1, 1]. Defaults to false.
+  * period - For gradient noise, the size (side length) of a unit square, in pixels. Defaults to 32.
+  * octaves - The number of octaves. Defaults to 1.
+  * persistance - The persistance of the octaves (a higher value means the successive octaves will be given more weight). Defaults to 2.
+  * colormap - A mapping function or two dimensional array that will take a value between 0 and 255 as its argument or index, respectively. The function should return an array containing the RGBA values to be painted on the canvas, eg `[255, 0, 0, 255]` (red). Likewise, the array must contain an array of RGBA values for each index ranging from 0 to 255. While I haven't noticed any big difference in performance, hypothetically, the multi-dimensional array approach should be faster.
 
 ### Aside
 

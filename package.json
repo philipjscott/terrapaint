@@ -4,7 +4,6 @@
   "description": "Simple heightmap generator for HTML5 canvas",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "browserify ./docs/demo.js > ./docs/bundle.js"
   },
   "keywords": [
     "heightmap",
