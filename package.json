@@ -1,6 +1,6 @@
 {
   "name": "terrapaint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple heightmap generator for HTML5 canvas",
   "main": "./dist/index.js",
   "scripts": {
