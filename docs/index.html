@@ -2,18 +2,20 @@
 <html>
   <head>
     <title>Terrapaint demonstration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="author">ScottyFillups | Philip Scott</div>
     <main>
     <h1>Terrapaint</h1>
     <h2>A simple wrapper that lets you draw heightmaps easily.</h2>
-    <p>Try manipulating some of the heightmaps below!</p>
+    <p>Try generating your own heightmaps!</p>
     <form action="" id="args-form">
-      Width: <input id="args-width" type="text" placeholder="1024" /><br />
-      Height: <input id="args-height" type="text" placeholder="512" /><br />
-      Octaves: <input id="args-octaves" type="text" placeholder="7" /><br />
-      Period: <input id="args-period" type="text" placeholder="512" /><br />
+      Width: <input id="args-width" type="text" placeholder="256" /><br />
+      Height: <input id="args-height" type="text" placeholder="256" /><br />
+      Octaves: <input id="args-octaves" type="text" placeholder="6" /><br />
+      Period: <input id="args-period" type="text" placeholder="128" /><br />
       Noise type:
       <select id="args-type">
         <option value="simple">Simplex</option>
@@ -29,7 +31,6 @@
     </form>
     </main>
     <div id="entry"></div>
-    <footer>ScottyFillups | Philip Scott</footer>
   </body>
   <script src="noise.js"></script>
   <script src="terrapaint.js"></script>

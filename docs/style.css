@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
 body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   line-height: 200%;
-  margin: 60px auto 0 auto;
+  margin: 80px auto 0 auto;
   color: #222;
 }
 main {
   margin: 0 auto;
-  width: 600px;
 }
 h1 {
   font-size: 4em;
@@ -24,16 +22,19 @@ p {font-size: 1em}
   width: 430px;
   user-select: none;
   text-align: right;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  width: 250px;
 }
 input, button, select {
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
 }
-footer {
+.author {
   position: fixed;
-  left: 10px;
-  top: 5px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.85);
+  color: #fff;
+  top: 0;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -41,3 +42,11 @@ footer {
 canvas {
   margin-bottom: 30px;
 }
+
+@media only screen and (min-width: 0px) {
+  main { width: 300px }
+}
+@media only screen and (min-width: 650px) {
+  main { width: 600px }
+}
+

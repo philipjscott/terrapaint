@@ -25,10 +25,10 @@ try {
 
 if (isSupported) {
   $('args-submit').addEventListener('click', function () {
-    var height = parseInt($('args-height').value) || 512
-    var width = parseInt($('args-width').value) || 1024
-    var octaves = parseInt($('args-octaves').value) || 7
-    var period = parseInt($('args-period').value) || 512
+    var height = parseInt($('args-height').value) || 256
+    var width = parseInt($('args-width').value) || 256
+    var octaves = parseInt($('args-octaves').value) || 6
+    var period = parseInt($('args-period').value) || 128
     var type = $('args-type').options[$('args-type').selectedIndex].value
     var colormap = $('args-colormap').options[$('args-colormap').selectedIndex].value
     var fn
