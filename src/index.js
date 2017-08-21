@@ -1,3 +1,12 @@
+try {
+  var imageTest = new ImageData(20, 20)
+  var numberTest = Math.trunc(20.1)
+} catch (e) {
+  var err = 'Error, browser not supported by Terrapaint. '
+  err += 'Please switch to Vivaldi, Firefox, Chrome, Opera, or Safari.'
+  console.log(err)
+}
+
 function terrapaint (noise, w, h, options) {
   options = options || {}
   var octaves = options.octaves || 1

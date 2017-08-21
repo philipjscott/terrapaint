@@ -12,7 +12,12 @@ If you plan to use Browserify or Webpack: `npm install terrapaint --save-dev`
 
 ### Usage
 
-Either embed `<script src="https://scottyfillups.github.io/terrapaint/terrapaint.js></script>` in your HTML source, or, if you're using Webpack / Browserify:
+Either embed 
+```html
+<script src="https://scottyfillups.github.io/terrapaint/terrapaint.js></script>
+```
+in your HTML source, or, if you're using Webpack / Browserify:
+
 
 ```js
 var terrapaint = require('terrapaint')
