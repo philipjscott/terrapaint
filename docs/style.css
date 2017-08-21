@@ -23,7 +23,7 @@ p {font-size: 1em}
   user-select: none;
   text-align: right;
   margin: 0 auto 20px auto;
-  width: 260px;
+  width: 256px;
 }
 input, button, select {
   font-size: 1em;
