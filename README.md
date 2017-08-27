@@ -25,20 +25,45 @@ var terrapaint = require('terrapaint')
 // Or,
 // import terrapaint from 'terrapaint'
 
-terrapaint(noiseFunct, width, height, options)
+var map = terrapaint.map(noiseFn, config)
+map.create('#target', 128, 128)
+map.loop()
 ```
 
-#### Parameters
-* noiseFunct: The noise function used to generate the heightmap. The function's output should range from [0, 1]. If it ranges from [-1, 1], set `options.offset = true`
-* width: The width of the generated heightmap, in pixels
-* height: The height of the generated heightmap, in pixels
-* __options__:
-  * target - The element which the canvas will be appended to.
-  * offset - Set this to true if your noise function ranges from [-1, 1]. Defaults to false.
-  * period - For gradient noise, the size (side length) of a unit square, in pixels. Defaults to 32.
-  * octaves - The number of octaves. Defaults to 1.
-  * persistance - The persistance of the octaves (a higher value means the successive octaves will be given more weight). Defaults to 2.
-  * colormap - A mapping function or two dimensional array that will take a value between 0 and 255 as its argument or index, respectively. The function should return an array containing the RGBA values to be painted on the canvas, eg `[255, 0, 0, 255]` (red). Likewise, the array must contain an array of RGBA values for each index ranging from 0 to 255. While I haven't noticed any big difference in performance, hypothetically, the multi-dimensional array approach should be faster.
+##### terrapaint.map(fn, config)
+
+* fn: The noise function used to generate the heightmap. The function's output should range from [0, 1]. If it ranges from [-1, 1], set `config.offset = true`
+* __config__:
+  * colormap: A function that takes the perlin noise value (mapped to [0, 255]) and returns a RGBA array ([R,G,B,A]). Or, a multi-dimensional array lookup up table, storing a RGBA array for each index ranging from 0 to 255.
+  * offset: Set this to true if your noise function ranges from [-1, 1]. Defaults to false.
+  * period: For gradient noise, the size (side length) of a unit square, in pixels. Defaults to 32.
+  * octaves: The number of octaves. Defaults to 1.
+  * persistance: The persistance of the octaves (a higher value means the successive octaves will be given more weight). Defaults to 2.
+  * update: A function called 60 times per second updating non-physical dimensions passed to the noise function. Takes in an array storing the present values, and should return an array with the updated values.
+  * init: The initial value (array) for the update function.
+* __Returns__ `Map`
+
+##### Map.create(target, width, height)
+
+Creates and appends a new canvas to the specified target.
+
+* target: The selector (jQuery style) or DOM object of the element that the canvas should be appended to.
+* width: The width of the canvas, in pixels.
+* height: The height of the canvas, in pixels.
+
+##### Map.draw(canvas)
+
+Draws the heightmap onto the specified canvas.
+
+* canvas: The selector or DOM object of the canvas
+
+##### Map.loop()
+
+Animate the heightmap using the `update` and `init` values specified in the `terrapaint.map( ... )` config
+
+##### Map.stop()
+
+Stops the heightmap animation.
 
 ### Aside
 
