@@ -61,6 +61,9 @@ function terrapaintFactory () {
     return new ImageData(map, width, height)
   }
   Map.prototype.draw = function (canvas) {
+    canvas = typeof canvas === 'string'
+      ? document.querySelector(canvas)
+      : canvas
     canvas.getContext('2d').putImageData(this.compute(
       canvas.width,
       canvas.height
@@ -70,10 +73,13 @@ function terrapaintFactory () {
   Map.prototype.create = function (target, width, height) {
     var canvas = document.createElement('canvas')
     var ctx = canvas.getContext('2d')
+    target = typeof target === 'string'
+      ? document.querySelector(target)
+      : target
     canvas.width = width
     canvas.height = height
     ctx.putImageData(this.compute(width, height), 0, 0)
-    document.querySelector(target).appendChild(canvas)
+    target.appendChild(canvas)
     this.canvas = canvas
   }
   Map.prototype.loop = function () {
