@@ -1,6 +1,7 @@
 import terrapaint from '../src/index'
 
 var isSupported = true
+var map
 
 try {
   var imageTest = new ImageData(20, 20)
@@ -27,10 +28,11 @@ try {
 
 if (isSupported) {
   $('args-submit').addEventListener('click', function () {
-    var height = parseInt($('args-height').value) || 256
-    var width = parseInt($('args-width').value) || 256
-    var octaves = parseInt($('args-octaves').value) || 6
-    var period = parseInt($('args-period').value) || 128
+    var height = parseInt($('args-height').value) || 128
+    var width = parseInt($('args-width').value) || 128
+    var octaves = parseInt($('args-octaves').value) || 5
+    var period = parseInt($('args-period').value) || 64
+    var animated = $('args-animated').checked
     var type = $('args-type').options[$('args-type').selectedIndex].value
     var colormap = $('args-colormap').options[$('args-colormap').selectedIndex].value
     var fn
@@ -44,10 +46,10 @@ if (isSupported) {
         offset = false
         break
       case 'perlin':
-        fn = noise.perlin3
+        fn = animated ? noise.perlin3 : noise.perlin2
         break
       default:
-        fn = noise.simplex3
+        fn = animated ? noise.simplex3 : noise.simplex2
     }
 
     switch (colormap) {
@@ -61,15 +63,19 @@ if (isSupported) {
     if ($('entry').firstChild) {
       $('entry').removeChild($('entry').firstChild)
     }
-
-    var map = terrapaint.map(fn, {
+  
+    var config = {
       octaves: octaves,
       period: period,
       colormap: colormap,
-      offset: offset,
-      init: [0],
-      update: function (dim) { return [dim[0] + 0.00001] }
-    })
+      offset: offset
+    }
+    if (animated) {
+      config.init = [0]
+      config.update = function (dim) { return [dim[0] + 0.00001] }
+    }
+
+    map = terrapaint.map(fn, config)
     map.create('#entry', width, height)
     map.loop()
   })

@@ -9,27 +9,29 @@
   <body>
     <div class="author">ScottyFillups | Philip Scott</div>
     <main>
-    <h1>Terrapaint</h1>
-    <h2>A simple wrapper that lets you draw heightmaps easily.</h2>
-    <p>Try generating your own heightmaps!</p>
-    <form action="" id="args-form">
-      Width: <input id="args-width" type="text" placeholder="256" /><br />
-      Height: <input id="args-height" type="text" placeholder="256" /><br />
-      Octaves: <input id="args-octaves" type="text" placeholder="6" /><br />
-      Period: <input id="args-period" type="text" placeholder="128" /><br />
-      Noise type:
-      <select id="args-type">
-        <option value="simple">Simplex</option>
-        <option value="perlin">Perlin</option>
-        <option value="white">White</option>
-      </select><br />
-      Colormap type:
-      <select id="args-colormap">
-        <option value="none">None</option>
-        <option value="island">Island</option>
-      </select><br />
-      <button id="args-submit" type="button">Generate</button>
-    </form>
+      <h1>Terrapaint</h1>
+      <h2>A simple wrapper that lets you draw heightmaps easily.</h2>
+      <p>Try generating your own heightmaps!</p>
+      <form action="" id="args-form">
+        Width: <input id="args-width" type="text" placeholder="128" /><br />
+        Height: <input id="args-height" type="text" placeholder="128" /><br />
+        Octaves: <input id="args-octaves" type="text" placeholder="5" /><br />
+        Period: <input id="args-period" type="text" placeholder="64" /><br />
+        Noise type:
+        <select id="args-type">
+          <option value="perlin">Perlin</option>
+          <option value="simplex">Simplex</option>
+          <option value="white">White</option>
+        </select><br />
+        Colormap type:
+        <select id="args-colormap">
+          <option value="none">None</option>
+          <option value="island" selected="selected">Island</option>
+        </select><br />
+        Animated:
+        <input id="args-animated" type="checkbox" checked /><br />
+        <button id="args-submit" type="button">Generate</button>
+      </form>
     </main>
     <div id="entry"></div>
   </body>
