@@ -44,10 +44,10 @@ if (isSupported) {
         offset = false
         break
       case 'perlin':
-        fn = noise.perlin2
+        fn = noise.perlin3
         break
       default:
-        fn = noise.simplex2
+        fn = noise.simplex3
     }
 
     switch (colormap) {
@@ -62,16 +62,18 @@ if (isSupported) {
       $('entry').removeChild($('entry').firstChild)
     }
 
-    terrapaint(fn, width, height, {
-      target: '#entry',
+    var map = terrapaint.map(fn, {
       octaves: octaves,
       period: period,
       colormap: colormap,
-      offset: offset
+      offset: offset,
+      init: [0],
+      update: function (dim) { return [dim[0] + 0.00001] }
     })
+    map.create('#entry', width, height)
+    map.loop()
   })
 }
-
 function $ (id) {
   return document.getElementById(id)
 }
