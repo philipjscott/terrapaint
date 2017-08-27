@@ -24,8 +24,12 @@ function terrapaint (noise, w, h, options) {
     var max = 0
     var p = period
     var amp = Math.pow(persistance, octaves)
+    var args = []
     for (var i = 0; i < octaves; i++) {
-      val += (noise(x / p, y / p) + offset) * amp
+      for (var j = 0; j < arguments.length; j++) {
+        args[j] = arguments[j] / p
+      }
+      val += (noise.apply(this, args) + offset) * amp
       max += amp * (offset + 1)
       amp /= persistance
       p /= 2
@@ -54,6 +58,19 @@ function terrapaint (noise, w, h, options) {
   canvas.height = h
   ctx.putImageData(imageData, 0, 0)
   target.appendChild(canvas)
+
+/*
+  var module = {
+    map: {
+      update: function (fn) {
+      },
+      draw: function() {
+
+      }
+    }
+  }
+*/
+  return module
 }
 
 module.exports = terrapaint
