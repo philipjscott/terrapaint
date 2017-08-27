@@ -4,6 +4,8 @@
   "description": "Simple heightmap generator for HTML5 canvas",
   "main": "./src/index.js",
   "scripts": {
+    "webpack": "webpack",
+    "start": "webpack-dev-server -d --open"
   },
   "keywords": [
     "heightmap",
@@ -20,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/ScottyFillups/terrapaint/issues"
   },
-  "homepage": "https://github.com/ScottyFillups/terrapaint#readme"
+  "homepage": "https://github.com/ScottyFillups/terrapaint#readme",
+  "devDependencies": {
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
 }

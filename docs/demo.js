@@ -1,3 +1,5 @@
+import terrapaint from '../src/index'
+
 var isSupported = true
 
 try {
