@@ -30,7 +30,7 @@ map.create('#target', 128, 128)
 map.loop()
 ```
 
-##### terrapaint.map(fn, config)
+#### terrapaint.map(fn, config)
 
 * fn: The noise function used to generate the heightmap. The function's output should range from [0, 1]. If it ranges from [-1, 1], set `config.offset = true`
 * __config__:
@@ -43,7 +43,7 @@ map.loop()
   * init: The initial value (array) for the update function.
 * __Returns__ `Map`
 
-##### Map.create(target, width, height)
+#### Map.create(target, width, height)
 
 Creates and appends a new canvas to the specified target.
 
@@ -51,17 +51,17 @@ Creates and appends a new canvas to the specified target.
 * width: The width of the canvas, in pixels.
 * height: The height of the canvas, in pixels.
 
-##### Map.draw(canvas)
+#### Map.draw(canvas)
 
 Draws the heightmap onto the specified canvas.
 
 * canvas: The selector or DOM object of the canvas
 
-##### Map.loop()
+#### Map.loop()
 
 Animate the heightmap using the `update` and `init` values specified in the `terrapaint.map( ... )` config
 
-##### Map.stop()
+#### Map.stop()
 
 Stops the heightmap animation.
 
