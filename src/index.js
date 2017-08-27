@@ -80,9 +80,12 @@ function terrapaintFactory () {
     var that = this
     var fn = function () {
       that.draw(that.canvas)
-      requestAnimationFrame(fn)
+      this.animReq = requestAnimationFrame(fn)
     }
-    requestAnimationFrame(fn)
+    this.animReq = requestAnimationFrame(fn)
+  }
+  Map.prototype.stop = function () {
+    cancelAnimationFrame(this.animReq)
   }
 
   var module = {

@@ -75,6 +75,8 @@ if (isSupported) {
       config.update = function (dim) { return [dim[0] + 0.00001] }
     }
 
+    if (map) map.stop()
+
     map = terrapaint.map(fn, config)
     map.create('#entry', width, height)
     map.loop()
