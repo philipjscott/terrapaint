@@ -94,12 +94,46 @@ function terrapaintFactory () {
     cancelAnimationFrame(this.animReq)
   }
 
+  function Curve (noise, options) {
+    setOptions.call(this, options)
+    this.noise = noise
+  }
+  Curve.prototype.compute = function (width, height) {
+    var curve = new Uint8ClampedArray(width * height * 4).fill(255)
+    for (var x = 0; x < width; x++) {
+      if (this.loopvalues.length !== 0) {
+        this.loopvalues = this.update(this.loopvalues)
+      }
+      var noiseArgs = [x].concat(this.loopvalues)
+      var val = Math.trunc(octavate.apply(this, noiseArgs) * 255)
+      //console.log(val)
+      for (var i = 0; i < 3; i++) {
+        curve[val * width * 4 + x * 4 + i] = 0
+      }
+    }
+    //console.log(curve)
+    //throw 'a'
+    return new ImageData(curve, width, height)
+  }
+  Curve.prototype.draw = function (canvas) {
+    Map.prototype.draw.call(this, canvas)
+  }
+  Curve.prototype.create = function (target, width, height) {
+    Map.prototype.create.call(this, target, width, height)
+  }
+  Curve.prototype.loop = function () {
+    Map.prototype.loop.call(this)
+  }
+  Curve.prototype.stop = function () {
+    Map.prototype.stop.call(this)
+  }
+
   var module = {
     map: function (noise, options) {
       return new Map(noise, options)
     },
-    curve: function () {
-      return new Curve()
+    curve: function (noise, options) {
+      return new Curve(noise, options)
     },
     THREE2: function () {
       return new THREE2()

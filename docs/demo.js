@@ -115,3 +115,15 @@ function islandColormap (val) {
     return [255, 255, 255, 255]
   }
 }
+
+
+/*
+var curve = terrapaint.curve(noise.perlin2, {
+  octaves: 2,
+  period: 128,
+  offset: true,
+  update: function (args) { return [args[0] + 0.005] },
+  init: [0]
+})
+curve.create(document.body, 256, 256)
+curve.loop()*/
