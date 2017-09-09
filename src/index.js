@@ -18,7 +18,7 @@ function terrapaintFactory () {
       for (var j = 0; j < arguments.length; j++) {
         args[j] = arguments[j] / p
       }
-      val += (this.noise.apply(null, args) + this.offset) * amp
+      val += (this.noise.apply(this.thisArg, args) + this.offset) * amp
       max += amp * (this.offset + 1)
       amp /= this.persistance
       p /= 2
@@ -34,6 +34,7 @@ function terrapaintFactory () {
     this.update = options.update || function () { throw 'No update fn' }
     this.loopvalues = options.init || []
     this.colormap = options.colormap || function (v) { return [v, v, v, 255] }
+    this.thisArg = options.thisArg || null
   }
   
   function Map (noise, options) {

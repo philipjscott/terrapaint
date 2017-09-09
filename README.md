@@ -41,6 +41,7 @@ map.loop()
   * persistance: The persistance of the octaves (a higher value means the successive octaves will be given more weight). Defaults to 2.
   * update: A function called 60 times per second updating non-physical dimensions passed to the noise function. Takes in an array storing the present values, and should return an array with the updated values.
   * init: The initial value (array) for the update function.
+  * thisArg: The `this` object of the function, if needed
 * __Returns__ `Map`
 
 #### Map.create(target, width, height)
