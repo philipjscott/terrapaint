@@ -2,9 +2,9 @@
 
 ### Canvas heightmap generator
 
-![Island heightmap](https://scottyfillups.github.io/terrapaint/island.png)
+![Island heightmap](https://philipjscott.github.io/terrapaint/island.png)
 
-More demonstrations here: <https://scottyfillups.github.io/terrapaint/>
+More demonstrations here: <https://philipjscott.github.io/terrapaint/>
 
 ### Installation
 
@@ -14,7 +14,7 @@ If you plan to use Browserify or Webpack: `npm install terrapaint --save-dev`
 
 Either embed 
 ```html
-<script src="https://scottyfillups.github.io/terrapaint/terrapaint.js></script>
+<script src="https://philipjscott.github.io/terrapaint/terrapaint.js></script>
 ```
 in your HTML source, or, if you're using Webpack / Browserify:
 
